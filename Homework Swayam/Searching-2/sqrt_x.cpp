@@ -13,9 +13,12 @@ public:
                 return mid;
             }
             if(square<n){
+                //can be a potential answer
                 ans=mid;
+                //search better answer
                 s=mid+1;
             }
+            //else right part se left me aao kyunki right me answer nhi hai
             else{
                 e=mid-1;
             }
