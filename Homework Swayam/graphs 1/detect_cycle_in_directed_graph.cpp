@@ -2,7 +2,7 @@
 using namespace std;
 class Solution {
     private:
-        bool dfs(int node , vector<int>adj[], int vis[] , int pathVis[]){
+        bool dfs(int node , vector<int>adj[], vector<int> vis, vector<int> pathVis){
             vis[node]=1;
             pathVis[node]=1;
             // traverse adjacent node
@@ -25,8 +25,8 @@ class Solution {
         // Function to detect cycle in a directed graph.
         bool isCyclic(int V, vector<int> adj[]) {
             // code here
-            int vis[V]={0};
-            int pathVis[V]={0};
+            vector<int> vis(V,0);
+            vector<int> pathVis(V,0);
             for(int i=0 ; i<V ;i++){
                 if(!vis[i]){
                     if(dfs(i , adj , vis , pathVis)==true){
@@ -35,5 +35,5 @@ class Solution {
                 }
             }
             return false;
-    }
+        }
 };
